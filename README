@@ -36,7 +36,6 @@ Currently slstatus works on FreeBSD, Linux and OpenBSD.
 In order to build slstatus you need the Xlib header files.
 
 Status icons are provided by the package ttf-font-awesome.
-The volume level is fetched from a command included in the alsa-utils package.
 
 Installation
 ------------
