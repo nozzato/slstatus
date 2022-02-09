@@ -64,6 +64,26 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	/* function 		format			argument */
+
+	/* ethernet download speed | run "ip link" to view network interfaces and replace "enp39s0" with yours */
+	{ netspeed_rx, 		" %sB/s  ",		"enp39s0" },
+	/* ethernet upload speed */
+/*	{ netspeed_tx, 		"  %sB/s  ",		"enp39s0" },*/
+	/* wifi download speed */
+/*	{ netspeed_rx, 		" %sB/s  ",		"wlan0" },*/
+	/* wifi upload speed */
+/*	{ netspeed_tx, 		"  %sB/s  ",		"wlan0" },*/
+	/* cpu usage */
+	{ cpu_perc,		" %s%%  ",		NULL },
+	/* ram usage */
+	{ ram_perc,		" %s%%  ",		NULL },
+	/* cpu temperature */
+	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
+	/* battery charge */
+/*	{ battery_perc,		" %s%%  ",		"BAT0" },*/
+	/* volume level */
+/*	{ run_command,		" %s%%  ",		"amixer get Master | awk 'FNR == 5 {print $4}' | tr -d '[]%'" },*/
+	/* day, date, month, time */
+	{ datetime,		"%s",			"%a %d %b %r" },
 };
