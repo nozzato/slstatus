@@ -1,3 +1,14 @@
+Arch installation instructions
+==============================
+sudo pacman -Sy ttf-font-awesome
+cd sources
+git clone https://github.com/nozzato/slstatus.git
+cd slstatus
+cp config.def.h config.h
+vim config.h
+sudo make clean install
+
+
 slstatus - suckless status
 ==========================
 slstatus is a suckless status monitor for window managers that use WM_NAME
