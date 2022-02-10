@@ -67,15 +67,15 @@ static const struct arg args[] = {
 	/* function 		format			argument */
 
 	/* network download speed | run "ip link" to view network interfaces and replace "enp39s0" with yours */
-	{ netspeed_rx, 		" %sB/s  ",		"enp39s0" },
+	{ netspeed_rx, 		"  %sB/s  ",		"enp39s0" },
 	/* network upload speed */
-/*	{ netspeed_tx, 		"  %sB/s  ",		"enp39s0" },*/
+/*	{ netspeed_tx, 		" %sB/s  ",		"enp39s0" },*/
 	/* cpu usage */
 	{ cpu_perc,		" %s%%  ",		NULL },
 	/* ram usage */
 	{ ram_perc,		" %s%%  ",		NULL },
 	/* cpu temperature */
-	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
+/*	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },*/
 	/* battery charge */
 /*	{ battery_perc,		" %s%%  ",		"BAT0" },*/
 	/* volume level */
