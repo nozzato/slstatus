@@ -66,14 +66,10 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function 		format			argument */
 
-	/* ethernet download speed | run "ip link" to view network interfaces and replace "enp39s0" with yours */
+	/* network download speed | run "ip link" to view network interfaces and replace "enp39s0" with yours */
 	{ netspeed_rx, 		" %sB/s  ",		"enp39s0" },
-	/* ethernet upload speed */
+	/* network upload speed */
 /*	{ netspeed_tx, 		"  %sB/s  ",		"enp39s0" },*/
-	/* wifi download speed */
-/*	{ netspeed_rx, 		" %sB/s  ",		"wlan0" },*/
-	/* wifi upload speed */
-/*	{ netspeed_tx, 		"  %sB/s  ",		"wlan0" },*/
 	/* cpu usage */
 	{ cpu_perc,		" %s%%  ",		NULL },
 	/* ram usage */
