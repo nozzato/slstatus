@@ -75,7 +75,7 @@ static const struct arg args[] = {
 	/* ram usage */
 	{ ram_perc,		" %s%%  ",		NULL },
 	/* cpu temperature */
-//	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $4}' | cut -c 2-3" },
+//	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
 	/* battery level */
 //	{ run_command,		" %s  ",		"if (( $(cat /sys/class/power_supply/BAT0/capacity) > 5 )); then bat=$(cat /sys/class/power_supply/BAT0/capacity); if (($bat > 9)); then echo $bat'%'; else echo ' '$bat'%'; fi; else if [[ $(($(date +%s) % 2 )) == 0 ]]; then bat=$(cat /sys/class/power_supply/BAT0/capacity); echo ' '$bat'%'; else echo 'LOW'; fi; fi" },
 	/* volume level */
