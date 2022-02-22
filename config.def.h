@@ -79,7 +79,7 @@ static const struct arg args[] = {
 	/* battery level */
 //	{ run_command,		" %s  ",		"if (( $(cat /sys/class/power_supply/BAT0/capacity) > 5 )); then bat=$(cat /sys/class/power_supply/BAT0/capacity); if (($bat > 9)); then echo $bat'%'; else echo ' '$bat'%'; fi; else if [[ $(($(date +%s) % 2 )) == 0 ]]; then bat=$(cat /sys/class/power_supply/BAT0/capacity); echo ' '$bat'%'; else echo 'LOW'; fi; fi" },
 	/* volume level */
-//	{ run_command,		" %s%%  ",		"amixer get Master | awk 'FNR == 5 {print $4}' | tr -d '[]%'" },
+//	{ run_command,		" %s  ",		"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'" },
 	/* day, date, month, time */
 	{ datetime,		"%s",			"%a %d %b %r" },
 };
