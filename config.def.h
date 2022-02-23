@@ -64,22 +64,22 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function 		format			argument */
+    /* function         format          argument */
 
-	/* network download speed | run "ip link" to view network interfaces and replace "enp39s0" with yours */
-	{ netspeed_rx, 		"  %sB/s  ",		"eth0" },
-	/* network upload speed */
-//	{ netspeed_tx, 		" %sB/s  ",		"eth0" },
-	/* cpu usage */
-	{ cpu_perc,		" %s%%  ",		NULL },
-	/* ram usage */
-	{ ram_perc,		" %s%%  ",		NULL },
-	/* cpu temperature */
-//	{ run_command,		" %s°  ",		"sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
-	/* battery level */
-//	{ run_command,		" %s  ",		"if (( $(cat /sys/class/power_supply/BAT0/capacity) > 5 )); then bat=$(cat /sys/class/power_supply/BAT0/capacity); if (($bat > 9)); then echo $bat'%'; else echo ' '$bat'%'; fi; else if [[ $(($(date +%s) % 2 )) == 0 ]]; then bat=$(cat /sys/class/power_supply/BAT0/capacity); echo ' '$bat'%'; else echo 'LOW'; fi; fi" },
-	/* volume level */
-//	{ run_command,		" %s  ",		"amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'" },
-	/* day, date, month, time */
-	{ datetime,		"%s",			"%a %d %b %r" },
+    /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
+    { netspeed_rx,      "  %sB/s  ",   "eth0" },
+    /* network upload speed */
+    { netspeed_tx,      " %sB/s  ",    "eth0" },
+    /* cpu usage */
+    { cpu_perc,         " %s%%  ",     NULL },
+    /* ram usage */
+    { ram_perc,         " %s%%  ",     NULL },
+    /* cpu temperature */
+//  { run_command,      " %s°  ",      "sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
+    /* battery level */
+//  { run_command,      "%s  ",         "./sources/slstatus/applets/battery_applet.sh" },
+    /* volume level */
+//  { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
+    /* day, date, month, time */
+    { datetime,         "%s",           "%a %d %b %r" },
 };
