@@ -1,6 +1,6 @@
 Arch installation instructions
 ==============================
-sudo pacman -Sy ttf-font-awesome
+sudo pacman yay -S ttf-nerd-fonts-symbols-mono
 cd sources
 git clone https://github.com/nozzato/slstatus.git
 cd slstatus

@@ -73,13 +73,13 @@ static const struct arg args[] = {
     /* cpu usage */
     { cpu_perc,         " %s%%  ",     NULL },
     /* ram usage */
-    { ram_perc,         " %s%%  ",     NULL },
+    { ram_perc,         " %s%%  ",     NULL },
     /* cpu temperature */
 //  { run_command,      " %s°  ",      "sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
     /* battery level */
 //  { run_command,      "%s  ",         "./sources/slstatus/applets/battery_applet.sh" },
     /* volume level */
-//  { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
+// { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
