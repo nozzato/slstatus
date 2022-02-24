@@ -77,9 +77,9 @@ static const struct arg args[] = {
     /* cpu temperature */
 //  { run_command,      " %s°  ",      "sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
     /* battery level */
-//  { run_command,      "%s  ",         "./sources/slstatus/scripts/battery_applet.sh" },
+//  { run_command,      "%s  ",         "./sources/slstatus/scripts/battery_script.sh" },
     /* volume level */
-//  { run_command,      "%s  ",         "./sources/slstatus/scripts/volume_applet.sh" },
+//  { run_command,      "%s  ",         "./sources/slstatus/scripts/volume_script.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
