@@ -6,6 +6,8 @@ stat=$(cat /sys/class/power_supply/BAT0/status)
 if (( $cap == 100 )); then
     if [[ $stat == "Charging" ]]; then
         echo " MAX"
+    elif [[ $stat == "Full" ]]; then
+        echo " MAX"
     else
         echo " MAX"
     fi

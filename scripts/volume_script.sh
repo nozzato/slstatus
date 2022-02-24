@@ -1,7 +1,7 @@
 #! /bin/bash
 
 vol=$(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | sed 's/%//')
-mute=$(pacmd list-sinks | awk '/muted/ { print $2 }')
+mute=$(pacmd list-sinks | awk '/muted/ { print $2 }' | head -n 1)
 
 if [[ $mute == "no" ]]; then
     if (( $vol == 0 )); then
