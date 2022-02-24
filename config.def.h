@@ -79,7 +79,7 @@ static const struct arg args[] = {
     /* battery level */
 //  { run_command,      "%s  ",         "./sources/slstatus/applets/battery_applet.sh" },
     /* volume level */
-// { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
+//  { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
