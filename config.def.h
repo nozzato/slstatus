@@ -69,7 +69,7 @@ static const struct arg args[] = {
     /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
     { netspeed_rx,      "  %sB/s  ",   "eth0" },
     /* network upload speed */
-    { netspeed_tx,      " %sB/s  ",    "eth0" },
+//  { netspeed_tx,      " %sB/s  ",    "eth0" },
     /* cpu usage */
     { cpu_perc,         " %s%%  ",     NULL },
     /* ram usage */
@@ -77,9 +77,9 @@ static const struct arg args[] = {
     /* cpu temperature */
 //  { run_command,      " %s°  ",      "sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
     /* battery level */
-//  { run_command,      "%s  ",         "./sources/slstatus/applets/battery_applet.sh" },
+//  { run_command,      "%s  ",         "./sources/slstatus/scripts/battery_applet.sh" },
     /* volume level */
-//  { run_command,      "%s  ",         "./sources/slstatus/applets/volume_applet.sh" },
+//  { run_command,      "%s  ",         "./sources/slstatus/scripts/volume_applet.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
