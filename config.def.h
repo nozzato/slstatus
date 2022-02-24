@@ -71,11 +71,11 @@ static const struct arg args[] = {
     /* network upload speed */
 //  { netspeed_tx,      " %sB/s  ",    "eth0" },
     /* cpu usage */
-    { cpu_perc,         " %s%%  ",     NULL },
+    { cpu_perc,         " %s%%  ",     NULL },
     /* ram usage */
-    { ram_perc,         " %s%%  ",     NULL },
+    { ram_perc,         " %s%%  ",     NULL },
     /* cpu temperature */
-//  { run_command,      " %s°  ",      "sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3" },
+//  { run_command,      "%s°  ",        "./sources/slstatus/scripts/temperature_script.sh" },
     /* battery level */
 //  { run_command,      "%s  ",         "./sources/slstatus/scripts/battery_script.sh" },
     /* volume level */
