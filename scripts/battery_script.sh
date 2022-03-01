@@ -3,17 +3,11 @@
 cap=$(cat /sys/class/power_supply/BAT0/capacity)
 stat=$(cat /sys/class/power_supply/BAT0/status)
 
-if (( $cap == 100 )); then
-    if [[ $stat == "Charging" ]]; then
-        echo " MAX"
-    elif [[ $stat == "Full" ]]; then
-        echo " MAX"
-    else
-        echo " MAX"
-    fi
-elif (( $cap > 80 && $cap < 100 )); then
+if (( $cap > 80 && $cap <= 100 )); then
     if [[ $stat == "Charging" ]]; then
         echo " $cap%"
+    elif [[ $stat == "Full" ]]; then
+        echo " $cap%" 
     else
         echo " $cap%"
     fi
