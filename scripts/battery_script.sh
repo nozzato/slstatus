@@ -3,56 +3,62 @@
 cap=$(cat /sys/class/power_supply/BAT0/capacity)
 stat=$(cat /sys/class/power_supply/BAT0/status)
 
-if (( $cap > 80 && $cap <= 100 )); then
+if (( $cap == 100 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " $cap"
     elif [[ $stat == "Full" ]]; then
-        echo " $cap%" 
+        echo " $cap" 
     else
-        echo " $cap%"
+        echo " $cap"
+    fi
+elif (( $cap > 80 && $cap < 100 )); then
+    if [[ $stat == "Charging" ]]; then
+        echo " 0$cap"
+    else
+        echo " 0$cap"
     fi
 elif (( $cap > 60 && $cap <= 80 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " 0$cap"
     else
-        echo " $cap%"
+        echo " 0$cap"
     fi
 elif (( $cap > 40 && $cap <= 60 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " 0$cap"
     else
-        echo " $cap%"
+        echo " 0$cap"
     fi
 elif (( $cap > 30 && $cap <= 40 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " 0$cap"
     else
-        echo " $cap%"
+        echo " 0$cap"
     fi
 elif (( $cap > 20 && $cap <= 30 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " 0$cap"
     else
-        echo " $cap%"
+        echo " 0$cap"
     fi
 elif (( $cap >= 10 && $cap <= 20 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo " 0$cap"
     else
-        echo " $cap%"
+        echo " 0$cap"
     fi
 elif (( $cap > 5 && $cap < 10 )); then
     if [[ $stat == "Charging" ]]; then
-        echo "  $cap%"
+        echo " 00$cap"
     else
-        echo "  $cap%"
+        echo " 00$cap"
     fi
 else
     if (( $(( $(date +%s) % 2 )) == 0 )); then
         if [[ $stat == "Charging" ]]; then
-            echo "  $cap%"
+            echo " 00$cap"
         else
-            echo "  $cap%"
+            echo " 00$cap"
         fi
     else
         if [[ $stat == "Charging" ]]; then

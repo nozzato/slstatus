@@ -77,9 +77,9 @@ static const struct arg args[] = {
     /* cpu temperature */
 //  { run_command,      "%s°  ",        "./sources/slstatus/scripts/temperature_script.sh" },
     /* battery level */
-//  { run_command,      "%s  ",         "./sources/slstatus/scripts/battery_script.sh" },
+//  { run_command,      "%s%%  ",         "./sources/slstatus/scripts/battery_script.sh" },
     /* volume level */
-//  { run_command,      "%s  ",         "./sources/slstatus/scripts/volume_script.sh" },
+//  { run_command,      "%s%%  ",         "./sources/slstatus/scripts/volume_script.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
