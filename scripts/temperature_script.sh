@@ -1,6 +1,7 @@
 #! /bin/bash
 
-temp=$(sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3)
+#temp=$(sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3)
+temp=$(sensors | awk 'FNR == 17 {print $2}' | cut -c 2-3)
 
 if (( $temp >= 80 && $temp <= 85 )); then
     echo " 0$temp"
