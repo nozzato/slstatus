@@ -55,7 +55,7 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD
  *                                                     thermal zone on FreeBSD
  *                                                     (tz0, tz1, etc.)
- * uid                 UID of current user             NULL
+ * uid *                UID of current user             NULL
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
@@ -66,6 +66,8 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
     /* function         format          argument */
 
+    /* notifications */
+//  { run_command,      "%s  ",         "$HOME/sources/slstatus/scripts/notification_script.sh" },
     /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
     { netspeed_rx,      "  %sB/s  ",   "eth0" },
     /* network upload speed */
