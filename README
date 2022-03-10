@@ -1,12 +1,20 @@
 Arch installation instructions
 ==============================
-sudo pacman yay -S ttf-nerd-fonts-symbols-mono
-cd sources
-git clone https://github.com/nozzato/slstatus.git
-cd slstatus
-cp config.def.h config.h
-vim config.h
-sudo make clean install
+Install these packages:
+ttf-nerd-fonts-symbols-mono     (for status icons)
+usleep                          (for cpu script)
+amixer                          (for volume script)
+xdotool                         (for notification script WIP)
+
+Clone the repository
+$ git clone https://github.com/nozzato/slstatus.git
+
+Modify config.h
+$ cp config.def.h config.h      (uncomment wanted stats and
+$ vim config.h                   comment out unwanted stats)
+
+Install slstatus
+# make clean install
 
 
 slstatus - suckless status
