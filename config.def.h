@@ -67,21 +67,21 @@ static const struct arg args[] = {
     /* function         format          argument */
 
     /* notifications */
-//  { run_command,      "%s  ",         "$HOME/sources/slstatus/scripts/notification_script.sh" },
+//  { run_command,      "  %s",         "$HOME/sources/slstatus/scripts/notification_script.sh" },
     /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
-    { netspeed_rx,      "  %sB/s  ",   "eth0" },
+    { netspeed_rx,      "   %sB/s  ",  "eth0" },
     /* network upload speed */
-//  { netspeed_tx,      " %sB/s  ",    "eth0" },
+    { netspeed_tx,      " %sB/s  ",    "eth0" },
     /* cpu usage */
-    { cpu_perc,         " %s%%  ",     NULL },
+    { run_command,      " %s%%  ",     "$HOME/sources/slstatus/scripts/cpu_script.sh" },
     /* ram usage */
     { ram_perc,         " %s%%  ",     NULL },
     /* cpu temperature */
-//  { run_command,      "%s°  ",        "$HOME/sources/slstatus/scripts/temperature_script.sh" },
+    { run_command,      "%s°  ",        "$HOME/sources/slstatus/scripts/temperature_script.sh" },
     /* battery level */
 //  { run_command,      "%s%%  ",       "$HOME/sources/slstatus/scripts/battery_script.sh" },
     /* volume level */
-//  { run_command,      "%s%%  ",       "$HOME/sources/slstatus/scripts/volume_script.sh" },
+    { run_command,      "%s%%  ",       "$HOME/sources/slstatus/scripts/volume_script.sh" },
     /* day, date, month, time */
     { datetime,         "%s",           "%a %d %b %r" },
 };
