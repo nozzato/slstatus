@@ -1,17 +1,17 @@
 Arch installation instructions
 ==============================
-Install these packages:
-ttf-nerd-fonts-symbols-mono     (for status icons)
-usleep                          (for cpu script)
-amixer                          (for volume script)
-xdotool                         (for notification script WIP)
-
 Clone the repository
 $ git clone https://github.com/nozzato/slstatus.git
 
 Modify config.h
 $ cp config.def.h config.h      (uncomment wanted stats and
 $ vim config.h                   comment out unwanted stats)
+
+Install these packages:
+ttf-nerd-fonts-symbols-mono     (for status icons)
+usleep                          (for cpu script)
+amixer                          (for volume script)
+xdotool                         (for notification script WIP)
 
 Install slstatus
 # make clean install
