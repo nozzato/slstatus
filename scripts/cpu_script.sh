@@ -1,5 +1,5 @@
 #!/bin/bash
-# Code modified from original by David C. Rankin
+# Code modified from original script by David C. Rankin
 
 # read /proc/stat file (for first datapoint)
 read cpu user nice system idle iowait irq softirq steal guest < /proc/stat
@@ -18,13 +18,19 @@ cpuActiveCur=$((user + system + nice + softirq + steal))
 cpuTotalCur=$((user + system + nice + softirq + steal + idle + iowait))
 
 # compute CPU utilization (%)
-cpuUtil=$((100 * ( cpuActiveCur - cpuActivePrev ) / (cpuTotalCur - cpuTotalPrev) ))
+cpuUtil=$((100 * (cpuActiveCur - cpuActivePrev) / (cpuTotalCur - cpuTotalPrev) ))
 
 if (($cpuUtil >= 0 && $cpuUtil < 10)); then
-    printf "00$cpuUtil"
+    printf " 00$cpuUtil"
 elif (($cpuUtil >= 10 && $cpuUtil < 100)); then
-    printf "0$cpuUtil"
+    printf " 0$cpuUtil"
+elif (($cpuUtil == 100)); then
+    printf " $cpuUtil"
 else
-    printf "$cpuUtil"
+    if (( $(echo $cpuUtil | grep "^-\?[0-9]+$") != "" )); then
+        echo " OoR"
+    else
+        echo " NaN"
+    fi
 fi
 
