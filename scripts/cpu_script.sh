@@ -21,16 +21,12 @@ cpuTotalCur=$((user + system + nice + softirq + steal + idle + iowait))
 cpuUtil=$((100 * (cpuActiveCur - cpuActivePrev) / (cpuTotalCur - cpuTotalPrev) ))
 
 if (($cpuUtil >= 0 && $cpuUtil < 10)); then
-    printf " 00$cpuUtil"
+    printf " 00$cpuUtil%%"
 elif (($cpuUtil >= 10 && $cpuUtil < 100)); then
-    printf " 0$cpuUtil"
+    printf " 0$cpuUtil%%"
 elif (($cpuUtil == 100)); then
-    printf " $cpuUtil"
+    printf " $cpuUtil%%"
 else
-    if (( $(echo $cpuUtil | grep "^-\?[0-9]+$") != "" )); then
-        echo " OoR"
-    else
-        echo " NaN"
-    fi
+    echo "You need to install usleep"
 fi
 
