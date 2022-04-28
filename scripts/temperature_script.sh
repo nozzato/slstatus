@@ -2,9 +2,7 @@
 
 temp=$(sensors | awk 'FNR == 3 {print $2}' | cut -c 2-3)
 
-if (( $temp == 0 )); then
-    echo " ZRO°"
-elif (( $temp > 0 && $temp < 40 )); then
+if (( $temp > 0 && $temp < 40 )); then
     echo " 0$temp°"
 elif (( $temp >= 40 && $temp < 50 )); then
     echo " 0$temp°"
