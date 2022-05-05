@@ -15,7 +15,7 @@ if [[ $mute == "no" ]]; then
     else
         echo " $vol%"
     fi
-else
+elif [[ $mute == "yes" ]]; then
     if (( $vol >= 0 && $vol < 10 )); then
         echo " 00$vol%"
     elif (( $vol >= 10 && $vol < 100 )); then
@@ -23,5 +23,10 @@ else
     else
         echo " $vol%"
     fi
+else
+    if (( $(echo $vol | grep "^-\?[0-9]+$") != "" )); then
+        echo " OoR°"
+    else
+        echo " NaN°"
+    fi
 fi
-
