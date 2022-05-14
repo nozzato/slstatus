@@ -62,9 +62,9 @@ else
         fi
     else
         if [[ $stat == "Charging" ]]; then
-            echo "^c#272822^^b#FF6188^ 00$cap%^b#272822^^c#FF6188^"
+            echo "^w^ 00$cap%^d^"
         else
-            echo "^c#272822^^b#FF6188^ 00$cap%^b#272822^^c#FF6188^"
+            echo "^w^ 00$cap%^d^"
         fi
     fi
 fi
