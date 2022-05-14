@@ -2,7 +2,7 @@
 
 temp=$(sensors | grep -A2 k10temp | awk 'FNR == 3 {print $2}' | cut -c 2-3)
 
-if (( $temp > 0 && $temp < 40 )); then
+if (( $temp >= 10 && $temp < 40 )); then
     echo " 0$temp°"
 elif (( $temp >= 40 && $temp < 50 )); then
     echo " 0$temp°"
@@ -10,10 +10,22 @@ elif (( $temp >= 50 && $temp < 60 )); then
     echo " 0$temp°"
 elif (( $temp >= 60 && $temp < 70 )); then
     echo " 0$temp°"
-elif (( $temp >= 70 && $temp <= 100 )); then
-    echo " 0$temp°" 
+elif (( $temp >= 70 && $temp < 80 )); then
+    echo " 0$temp°"
+elif (( $temp >= 80 && $temp < 100 )); then
+    if (( $(( $(date +%s) % 2 )) == 0 )); then
+        echo " 0$temp°"
+    else
+        echo "^c#272822^^b#FF6188^ 0$temp°^b#272822^^c#FF6188^"
+    fi
+elif (( $temp >= 100 && $temp < 200 )); then
+    if (( $(( $(date +%s) % 2 )) == 0 )); then
+        echo " $temp°"
+    else
+        echo "^c#272822^^b#FF6188^ $temp°^b#272822^^c#FF6188^"
+    fi
 else
-    if (( $(echo $temp | grep "^-\?[0-9]+$") != "" )); then
+    if [[ $temp =~ ^[0-9]+$ ]]; then
         echo " OoR°"
     else
         echo " NaN°"
