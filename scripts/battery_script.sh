@@ -62,9 +62,9 @@ else
         fi
     else
         if [[ $stat == "Charging" ]]; then
-            echo "^w^ 00$cap%^d^"
+            echo "^w^ 00$cap%^w^"
         else
-            echo "^w^ 00$cap%^d^"
+            echo "^w^ 00$cap%^w^"
         fi
     fi
 fi

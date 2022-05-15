@@ -16,13 +16,13 @@ elif (( $temp >= 80 && $temp < 100 )); then
     if (( $(( $(date +%s) % 2 )) == 0 )); then
         echo " 0$temp°"
     else
-        echo "^w^ 0$temp°^d^"
+        echo "^w^ 0$temp°^w^"
     fi
 elif (( $temp >= 100 && $temp < 200 )); then
     if (( $(( $(date +%s) % 2 )) == 0 )); then
         echo " $temp°"
     else
-        echo "^w^ $temp°^d^"
+        echo "^w^ $temp°^w^"
     fi
 else
     if [[ $temp =~ ^[0-9]+$ ]]; then
