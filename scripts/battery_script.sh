@@ -54,15 +54,15 @@ elif (( $cap > 5 && $cap < 10 )); then
         echo " 00$cap%"
     fi
 else
-    if (( $(( $(date +%s) % 2 )) == 0 )); then
+    if [[ $stat == "Charging" ]]; then
         if [[ $stat == "Charging" ]]; then
             echo " 00$cap%"
         else
             echo " 00$cap%"
         fi
     else
-        if [[ $stat == "Charging" ]]; then
-            echo "^w^ 00$cap%^w^"
+        if (( $(( $(date +%s) % 2 )) == 0 )); then
+            echo " 00$cap%"
         else
             echo "^w^ 00$cap%^w^"
         fi
