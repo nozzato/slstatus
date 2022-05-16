@@ -1,6 +1,6 @@
 #! /bin/bash
 
-temp=$(sensors | grep -A2 k10temp | awk 'FNR == 3 {print $2}' | cut -c 2-3)
+temp=$(sensors | grep -A2 skylake | awk 'FNR == 3 {print $2}' | cut -c 2-3)
 
 if (( $temp >= 10 && $temp < 40 )); then
     echo " 0$temp°"
