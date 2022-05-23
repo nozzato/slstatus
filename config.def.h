@@ -69,7 +69,7 @@ static const struct arg args[] = {
     /* notifications */
 //  { run_command,      "  %s",         "$HOME/sources/slstatus/scripts/notification_script.sh" },
     /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
-    { netspeed_rx,      "   %sB/s  ",  "enp39s0" },
+    { netspeed_rx,      "  %sB/s  ",  "enp39s0" },
     /* network upload speed */
     { netspeed_tx,      " %sB/s  ",    "enp39s0" },
     /* cpu usage */
