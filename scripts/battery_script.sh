@@ -3,6 +3,11 @@
 cap=$(cat /sys/class/power_supply/BAT0/capacity)
 stat=$(cat /sys/class/power_supply/BAT0/status)
 
+if [ -z $cap ]; then
+    cap=0
+    stat='Charging'
+fi
+
 if (( $cap == 100 )); then
     if [[ $stat == "Charging" ]]; then
         echo " $cap%"
