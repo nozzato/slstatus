@@ -58,6 +58,12 @@ elif (( $cap > 5 && $cap < 10 )); then
     else
         echo " 00$cap%"
     fi
+elif (( $cap == 0 )); then
+    if [[ $stat == "Charging" ]]; then
+        echo " 00$cap%" 
+    else    
+        systemctl hibernate
+    fi
 else
     if [[ $stat == "Charging" ]]; then
         if [[ $stat == "Charging" ]]; then
