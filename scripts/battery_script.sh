@@ -1,7 +1,7 @@
 #! /bin/bash
 
-cap=$(cat /sys/class/power_supply/BAT0/capacity)
-stat=$(cat /sys/class/power_supply/BAT0/status)
+readonly cap=$(cat /sys/class/power_supply/BAT0/capacity)
+readonly stat=$(cat /sys/class/power_supply/BAT0/status)
 
 if [ -z $cap ]; then
     cap=0
