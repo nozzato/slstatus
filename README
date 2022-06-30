@@ -10,7 +10,7 @@ $ vim config.h                   comment out unwanted stats)
 Install these packages:
 ttf-nerd-fonts-symbols-mono     (for status icons)
 usleep                          (for cpu script)
-xdotool                         (for notification script WIP)
+alock                           (for battery script)
 
 Install slstatus
 # make clean install
