@@ -61,7 +61,8 @@ elif (( $cap > 5 && $cap < 10 )); then
 elif (( $cap == 0 )); then
     if [[ $stat == "Charging" ]]; then
         echo " 00$cap%" 
-    else    
+    else
+        alock -bg none -cursor blank &
         systemctl hibernate
     fi
 else
