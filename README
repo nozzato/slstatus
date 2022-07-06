@@ -4,13 +4,13 @@ Clone the repository
 $ git clone https://github.com/nozzato/slstatus.git
 
 Modify config.h
-$ cp config.def.h config.h      (uncomment wanted stats and
-$ vim config.h                   comment out unwanted stats)
+$ cp config.def.h config.h   /* uncomment wanted stats and
+$ vim config.h                  comment out unwanted stats */
 
 Install these packages:
-ttf-nerd-fonts-symbols-mono     (for status icons)
-usleep                          (for cpu script)
-alock                           (for battery script)
+ttf-nerd-fonts-symbols-mono  // for status icons
+usleep                       // for cpu script
+alock                        // for battery script
 
 Install slstatus
 # make clean install
