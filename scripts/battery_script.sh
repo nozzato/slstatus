@@ -1,7 +1,15 @@
 #! /bin/bash
 
-readonly cap=$(cat /sys/class/power_supply/BAT0/capacity)
-readonly stat=$(cat /sys/class/power_supply/BAT0/status)
+cap=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ -z $cap ]; then
+    readonly cap=0
+    readonly stat='Charging'
+else
+    readonly cap=$cap
+    readonly stat=$(cat /sys/class/power_supply/BAT0/status)
+fi
+
 
 function wallpaper_exec() {
     xwinwrap -g 1920x1080 -ni -fs -un -b -nf -ov -- mpv -wid WID --loop --no-audio --no-input-default-bindings --really-quiet ~/videos/general/lofi_dupe_hop_radio.mp4 &
@@ -24,11 +32,6 @@ elif (( $(cat /tmp/bs_charging) == 1 )) && [[ $stat != "Charging" && $stat != "F
     echo 0 > /tmp/bs_charging
 fi
 
-
-if [ -z $cap ]; then
-    cap=0
-    stat='Charging'
-fi
 
 if (( $cap == 100 )); then
     if [[ $stat == "Charging" ]]; then
