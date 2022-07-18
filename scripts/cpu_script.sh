@@ -8,7 +8,7 @@ read cpu user nice system idle iowait irq softirq steal guest < /proc/stat
 cpuActivePrev=$((user + system + nice + softirq + steal))
 cpuTotalPrev=$((user + system + nice + softirq + steal + idle + iowait))
 
-usleep 50000
+sleep 0.05
 
 # read /proc/stat file (for second datapoint)
 read cpu user nice system idle iowait irq softirq steal guest < /proc/stat
@@ -26,7 +26,4 @@ elif (($cpuUtil >= 10 && $cpuUtil < 100)); then
     printf " 0$cpuUtil%%"
 elif (($cpuUtil == 100)); then
     printf " $cpuUtil%%"
-else
-    echo "You need to install usleep"
 fi
-
