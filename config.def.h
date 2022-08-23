@@ -83,5 +83,5 @@ static const struct arg args[] = {
     /* volume level */
     { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/volume_script.sh" },
     /* day, date, month, time */
-    { datetime,         "%s ",          "%a %d %b %r" },
+    { datetime,         "%s ",          "%a %d %b %R:%S" },
 };
