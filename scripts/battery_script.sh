@@ -11,26 +11,26 @@ else
 fi
 
 
-function wallpaper_exec() {
-    xwinwrap -g 1920x1080 -ni -fs -un -b -nf -ov -- mpv -wid WID --loop --no-audio --no-input-default-bindings --really-quiet ~/path/to/wallpaper.mp4 &
-}
-
-if [ ! -f /tmp/bs_charging ]; then
-    if [[ $stat == "Charging" ]]; then
-        wallpaper_exec
-        echo 1 > /tmp/bs_charging
-    else
-        echo 0 > /tmp/bs_charging
-    fi
-fi
-
-if (( $(cat /tmp/bs_charging) == 0 )) && [[ $stat == "Charging" || $stat == "Full" ]]; then
-    wallpaper_exec
-    echo 1 > /tmp/bs_charging
-elif (( $(cat /tmp/bs_charging) == 1 )) && [[ $stat != "Charging" && $stat != "Full" ]]; then
-    kill $(pgrep xwinwrap)
-    echo 0 > /tmp/bs_charging
-fi
+#function wallpaper_exec() {
+#    xwinwrap -g 1920x1080 -ni -fs -un -b -nf -ov -- mpv -wid WID --loop --no-audio --no-input-default-bindings --really-quiet ~/path/to/wallpaper.mp4 &
+#}
+#
+#if [ ! -f /tmp/bs_charging ]; then
+#    if [[ $stat == "Charging" ]]; then
+#        wallpaper_exec
+#        echo 1 > /tmp/bs_charging
+#    else
+#        echo 0 > /tmp/bs_charging
+#    fi
+#fi
+#
+#if (( $(cat /tmp/bs_charging) == 0 )) && [[ $stat == "Charging" || $stat == "Full" ]]; then
+#    wallpaper_exec
+#    echo 1 > /tmp/bs_charging
+#elif (( $(cat /tmp/bs_charging) == 1 )) && [[ $stat != "Charging" && $stat != "Full" ]]; then
+#    kill $(pgrep xwinwrap)
+#    echo 0 > /tmp/bs_charging
+#fi
 
 
 if (( $cap == 100 )); then
