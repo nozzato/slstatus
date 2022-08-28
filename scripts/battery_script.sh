@@ -12,7 +12,7 @@ fi
 
 
 function wallpaper_exec() {
-    xwinwrap -g 1920x1080 -ni -fs -un -b -nf -ov -- mpv -wid WID --loop --no-audio --no-input-default-bindings --really-quiet ~/videos/general/lofi_dupe_hop_radio.mp4 &
+    xwinwrap -g 1920x1080 -ni -fs -un -b -nf -ov -- mpv -wid WID --loop --no-audio --no-input-default-bindings --really-quiet ~/path/to/wallpaper.mp4 &
 }
 
 if [ ! -f /tmp/bs_charging ]; then
