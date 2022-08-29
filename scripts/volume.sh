@@ -1,7 +1,7 @@
 #! /bin/bash
 
-vol=$(amixer -D pulse sget Master | grep 'Left:' | awk -F '[][]' '{print $2}' | sed 's/%//')
-mute=$(pacmd list-sinks | awk '/muted/ {print $2}' | head -n 1)
+vol=$(pamixer --get-volume-human | sed 's/%//')
+mute=$(pamixer --get-mute)
 eq=$(pulseaudio-equalizer status | awk '/Equalizer status/{print $3}' | tr -d '[]')
 
 if [[ $eq == "enabled" ]]; then
@@ -16,7 +16,7 @@ else
     icon_off="ﱜ"
 fi
 
-if [[ $mute == "no" ]]; then
+if [[ $mute == "false" ]]; then
     if (( $vol == 0 )); then
         echo "$icon_off 00$vol%"
     elif (( $vol > 0 && $vol < 10  )); then
@@ -28,7 +28,7 @@ if [[ $mute == "no" ]]; then
     else
         echo "$icon_up $vol%"
     fi
-elif [[ $mute == "yes" ]]; then
+elif [[ $mute == "true" ]]; then
     if (( $vol >= 0 && $vol < 10 )); then
         echo "$icon_mute 00$vol%"
     elif (( $vol >= 10 && $vol < 100 )); then

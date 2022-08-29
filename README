@@ -9,6 +9,7 @@ $ vim config.h                  comment out unwanted stats */
 
 Install these packages:
 ttf-nerd-fonts-symbols-mono  // for status icons
+pamixer                      // for volume script
 alock                        // for battery script
 
 Install slstatus
