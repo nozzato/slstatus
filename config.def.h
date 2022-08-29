@@ -71,15 +71,15 @@ static const struct arg args[] = {
     /* network upload speed */
     { netspeed_tx,      " %sB/s  ",    "eth0" },
     /* cpu usage */
-    { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/cpu.sh" },
+    { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/cpu.sh" },
     /* ram usage */
-    { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/ram.sh" },
+    { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/ram.sh" },
     /* cpu temperature */
-    { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/temperature.sh" },
+    { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/temperature.sh" },
     /* battery level */
-//  { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/battery.sh" },
+//  { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/battery.sh" },
     /* volume level */
-    { run_command,      "%s  ",         "$HOME/apps/slstatus/scripts/volume.sh" },
+    { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/volume.sh" },
     /* day, date, month, time */
     { datetime,         "%s ",          "%a %d %b %R:%S" },
 };
