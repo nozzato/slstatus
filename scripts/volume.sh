@@ -4,42 +4,35 @@ vol=$(pamixer --get-volume)
 mute=$(pamixer --get-mute)
 eq=$(pulseaudio-equalizer status | awk '/Equalizer status/{print $3}' | tr -d '[]')
 
-if [[ $eq == "enabled" ]]; then
-    icon_up=""
-    icon_down=""
-    icon_mute=""
-    icon_off=""
+
+if (( $vol == 0 )); then
+    fvol=00$vol
+    icon=
+elif (( $vol > 0 && $vol < 10  )); then
+    fvol=00$vol
+    icon=
+elif (( $vol >= 10 && $vol < 50 )); then
+    fvol=0$vol
+    icon=
+elif (( $vol >= 50 && $vol < 100 )); then
+    fvol=0$vol
+    icon=
+elif (( $vol >= 100 && $vol < 1000 )); then
+    fvol=$vol
+    icon=
 else
-    icon_up="ﱜ"
-    icon_down="ﱜ"
-    icon_mute="ﱜ"
-    icon_off="ﱜ"
+    echo " OoR%"
+    exit 1
 fi
 
-if [[ $mute == "false" ]]; then
-    if (( $vol == 0 )); then
-        echo "$icon_off 00$vol%"
-    elif (( $vol > 0 && $vol < 10  )); then
-        echo "$icon_down 00$vol%"
-    elif (( $vol >= 10 && $vol < 50  )); then
-        echo "$icon_down 0$vol%"
-    elif (( $vol >= 50 && $vol < 100 )); then
-        echo "$icon_up 0$vol%"
-    else
-        echo "$icon_up $vol%"
-    fi
-elif [[ $mute == "true" ]]; then
-    if (( $vol >= 0 && $vol < 10 )); then
-        echo "$icon_mute 00$vol%"
-    elif (( $vol >= 10 && $vol < 100 )); then
-        echo "$icon_mute 0$vol%"
-    else
-        echo "$icon_mute $vol%"
-    fi
+
+if [[ $mute == true ]]; then
+    echo " $fvol%"
+    exit 0
+elif [[ $eq = disabled ]]; then
+    echo "ﱜ $fvol%"
+    exit 0
 else
-    if (( $(echo $vol | grep "^-\?[0-9]+$") != "" )); then
-        echo " OoR°"
-    else
-        echo " NaN°"
-    fi
+    echo "$icon $fvol%"
+    exit 0
 fi
