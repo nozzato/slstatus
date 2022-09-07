@@ -1,6 +1,6 @@
 #! /bin/bash
 
-vol=$(pamixer --get-volume-human | sed 's/%//')
+vol=$(pamixer --get-volume)
 mute=$(pamixer --get-mute)
 eq=$(pulseaudio-equalizer status | awk '/Equalizer status/{print $3}' | tr -d '[]')
 
