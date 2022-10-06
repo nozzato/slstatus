@@ -83,25 +83,16 @@ elif (( $cap > 5 && $cap < 10 )); then
     else
         echo " 00$cap%"
     fi
-elif (( $cap == 0 )); then
+elif (( $cap >= 1 && $cap <= 5 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 00$cap%" 
-    else
-        alock -bg none -cursor blank &
-        systemctl hibernate
-    fi
-else
-    if [[ $stat == "Charging" ]]; then
-        if [[ $stat == "Charging" ]]; then
-            echo " 00$cap%"
-        else
-            echo " 00$cap%"
-        fi
+        echo " 00$cap%"
     else
         if (( $(( $(date +%s) % 2 )) == 0 )); then
-            echo " 00$cap%"
+            echo " 00$cap%"
         else
-            echo "^w^ 00$cap%^w^"
+            echo "^w^ 00$cap%^w^"
         fi
     fi
+elif (( $cap == 0 )); then
+    systemctl hibernate
 fi
