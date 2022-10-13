@@ -4,7 +4,7 @@ cap=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ -z $cap ]; then
     readonly cap=0
-    readonly stat='Charging'
+    readonly stat="Charging"
 else
     readonly cap=$cap
     readonly stat=$(cat /sys/class/power_supply/BAT0/status)
@@ -94,5 +94,9 @@ elif (( $cap >= 1 && $cap <= 5 )); then
         fi
     fi
 elif (( $cap == 0 )); then
-    systemctl hibernate
+    if [[ $stat == "Charging" ]]; then
+        echo " 00$cap%"
+    else
+        systemctl hibernate
+    fi
 fi
