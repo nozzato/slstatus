@@ -67,9 +67,9 @@ static const struct arg args[] = {
     /* function         format          argument */
 
     /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
-    { netspeed_rx,      "  %sB/s  ",   "eth0" },
+    { netspeed_rx,      "  %sB/s  ",   "enp39s0" },
     /* network upload speed */
-    { netspeed_tx,      " %sB/s  ",    "eth0" },
+    { netspeed_tx,      " %sB/s  ",    "enp39s0" },
     /* cpu usage */
     { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/cpu.sh" },
     /* ram usage */
@@ -81,5 +81,5 @@ static const struct arg args[] = {
     /* volume level */
     { run_command,      "%s  ",         "$HOME/programs/slstatus/scripts/volume.sh" },
     /* day, date, month, time */
-    { datetime,         "%s ",          "%a %d %b %R:%S" },
+    { datetime,         "%s ",          "%F %T" },
 };
