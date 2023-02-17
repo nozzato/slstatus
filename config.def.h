@@ -28,6 +28,9 @@ static const char unknown_str[] = "n/a";
  * entropy             available entropy               NULL
  * gid                 GID of current user             NULL
  * hostname            hostname                        NULL
+ * io_in               disk IO (read)                  NULL
+ * io_out              disk IO (write)                 NULL
+ * io_perc             disk IO (percentage)            NULL
  * ipv4                IPv4 address                    interface name (eth0)
  * ipv6                IPv6 address                    interface name (eth0)
  * kernel_release      `uname -r`                      NULL
@@ -70,6 +73,8 @@ static const struct arg args[] = {
     { netspeed_rx,      "  %sB/s  ",   "eth0" },
     /* network upload speed */
     { netspeed_tx,      " %sB/s  ",    "eth0" },
+    /* disk IO */
+    { io_perc,          " %s%%  ",     NULL },
     /* cpu usage */
     { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/cpu.sh" },
     /* ram usage */

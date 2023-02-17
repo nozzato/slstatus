@@ -16,6 +16,11 @@ Install slstatus
 # make clean install
 
 
+Patches
+-------
+diskio
+
+
 slstatus - suckless status
 ==========================
 slstatus is a suckless status monitor for window managers that use WM_NAME
@@ -33,6 +38,7 @@ Features
 - Available entropy
 - Username/GID/UID
 - Hostname
+- Disk IO (read, write and percentage) (Linux only)
 - IP address (IPv4 and IPv6)
 - Kernel version
 - Keyboard indicators

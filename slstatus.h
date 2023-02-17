@@ -24,6 +24,11 @@ const char *entropy(void);
 /* hostname */
 const char *hostname(void);
 
+/* iocheck */
+const char *io_in(void);
+const char *io_out(void);
+const char *io_perc(void);
+
 /* ip */
 const char *ipv4(const char *interface);
 const char *ipv6(const char *interface);
