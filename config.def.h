@@ -76,15 +76,15 @@ static const struct arg args[] = {
     /* disk IO */
     { io_perc,          " %s%%  ",     NULL },
     /* cpu usage */
-    { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/cpu.sh" },
+    { run_command,      "%s  ",         "~/app/slstatus/scripts/cpu.sh" },
     /* ram usage */
-    { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/ram.sh" },
+    { run_command,      "%s  ",         "~/app/slstatus/scripts/ram.sh" },
     /* cpu temperature */
-    { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/temperature.sh" },
+    { run_command,      "%s  ",         "~/app/slstatus/scripts/temperature.sh" },
     /* battery level */
-//  { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/battery.sh" },
+//  { run_command,      "%s  ",         "~/app/slstatus/scripts/battery.sh" },
     /* volume level */
-    { run_command,      "%s  ",         "$HOME/app/slstatus/scripts/volume.sh" },
+    { run_command,      "%s  ",         "~/app/slstatus/scripts/volume.sh" },
     /* day, date, month, time */
     { datetime,         "%s ",          "%a %F %T" },
 };
