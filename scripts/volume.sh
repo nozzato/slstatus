@@ -30,7 +30,11 @@ if [[ $mute == true ]]; then
     echo " $fvol%"
     exit 0
 elif [[ $eq = disabled ]]; then
-    echo "ﱜ $fvol%"
+    if (( $(( $(date +%s) % 4 )) == 0 )); then
+        echo "ﱜ $fvol%"
+    else
+        echo "$icon $fvol%"
+    fi
     exit 0
 else
     echo "$icon $fvol%"
