@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 temp=$(sensors | grep -A2 k10temp | awk 'FNR == 3 {print $2}' | cut -c 2-3)
 
