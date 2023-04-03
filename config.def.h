@@ -70,7 +70,7 @@ static const struct arg args[] = {
     /* function         format          argument */
 
     /* Proton VPN status */
-    { run_command,      "%s",           "~/app/slstatus/scripts/protonvpn.sh" },
+    { run_command,      "%s",           "~/app/slstatus/scripts/vpn.sh" },
     /* network download speed */
     { netspeed_rx,      " %sB/s  ",    "eth0" },
     /* network upload speed */
