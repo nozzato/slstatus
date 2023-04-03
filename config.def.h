@@ -69,8 +69,10 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
     /* function         format          argument */
 
-    /* network download speed | run "ip link" to view network interfaces and replace "eth0" with yours */
-    { netspeed_rx,      "  %sB/s  ",   "eth0" },
+    /* Proton VPN status */
+    { run_command,      "%s",           "~/app/slstatus/scripts/protonvpn.sh" },
+    /* network download speed */
+    { netspeed_rx,      " %sB/s  ",    "eth0" },
     /* network upload speed */
     { netspeed_tx,      " %sB/s  ",    "eth0" },
     /* disk IO */
