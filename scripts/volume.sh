@@ -29,9 +29,9 @@ fi
 if [[ $mute == true ]]; then
     echo " $fvol%"
     exit 0
-elif [[ $eq = disabled ]]; then
+elif [[ $eq = enabled ]]; then
     if (( $(( $(date +%s) % 4 )) == 0 )); then
-        echo "ﱜ $fvol%"
+        echo "󰝝 $fvol%"
     else
         echo "$icon $fvol%"
     fi
