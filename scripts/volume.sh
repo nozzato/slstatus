@@ -27,16 +27,9 @@ fi
 
 
 if [[ $mute == true ]]; then
-    echo " $fvol%"
-    exit 0
-elif [[ $eq = enabled ]]; then
-    if (( $(( $(date +%s) % 4 )) == 0 )); then
-        echo "󰝝 $fvol%"
-    else
-        echo "$icon $fvol%"
-    fi
+    echo "$fvol% "
     exit 0
 else
-    echo "$icon $fvol%"
+    echo "$fvol% $icon"
     exit 0
 fi

@@ -72,11 +72,11 @@ static const struct arg args[] = {
     /* Proton VPN status */
     { run_command,      "%s",           "~/app/slstatus/scripts/vpn.sh" },
     /* network download speed */
-    { netspeed_rx,      " %sB/s  ",    "eth0" },
+    { netspeed_rx,      "%sB/s ",       "eth0" },
     /* network upload speed */
-    { netspeed_tx,      " %sB/s  ",    "eth0" },
+    { netspeed_tx,      "%sB/s   ",    "eth0" },
     /* disk IO */
-    { io_perc,          " %s%%  ",     NULL },
+    { io_perc,          "%s%%   ",     NULL },
     /* cpu usage */
     { run_command,      "%s  ",         "~/app/slstatus/scripts/cpu.sh" },
     /* ram usage */

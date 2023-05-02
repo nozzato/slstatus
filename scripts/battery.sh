@@ -35,67 +35,55 @@ fi
 
 if (( $cap == 100 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " $cap%"
+        echo "$cap%+"
     elif [[ $stat == "Full" ]]; then
-        echo " $cap%" 
+        echo "$cap%+" 
     else
-        echo " $cap%"
+        echo "$cap%+"
     fi
-elif (( $cap > 80 && $cap < 100 )); then
+elif (( $cap > 75 && $cap < 100 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
+        echo "0$cap%+"
     else
-        echo " 0$cap%"
+        echo "0$cap% "
     fi
-elif (( $cap > 60 && $cap <= 80 )); then
+elif (( $cap > 50 && $cap <= 75 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
+        echo "0$cap%+"
     else
-        echo " 0$cap%"
+        echo "0$cap% "
     fi
-elif (( $cap > 40 && $cap <= 60 )); then
+elif (( $cap > 25 && $cap <= 50 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
+        echo "0$cap%+"
     else
-        echo " 0$cap%"
+        echo "0$cap% "
     fi
-elif (( $cap > 30 && $cap <= 40 )); then
+elif (( $cap >= 10 && $cap <= 25 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
+        echo "0$cap%+"
     else
-        echo " 0$cap%"
-    fi
-elif (( $cap > 20 && $cap <= 30 )); then
-    if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
-    else
-        echo " 0$cap%"
-    fi
-elif (( $cap >= 10 && $cap <= 20 )); then
-    if [[ $stat == "Charging" ]]; then
-        echo " 0$cap%"
-    else
-        echo " 0$cap%"
+        echo "0$cap% "
     fi
 elif (( $cap > 5 && $cap < 10 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 00$cap%"
+        echo "00$cap%+"
     else
-        echo " 00$cap%"
+        echo "00$cap% "
     fi
 elif (( $cap >= 1 && $cap <= 5 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 00$cap%"
+        echo "00$cap%+"
     else
         if (( $(( $(date +%s) % 2 )) == 0 )); then
-            echo " 00$cap%"
+            echo "00$cap% "
         else
-            echo "^w^ 00$cap%^w^"
+            echo "^w^00$cap% ^w^"
         fi
     fi
 elif (( $cap == 0 )); then
     if [[ $stat == "Charging" ]]; then
-        echo " 00$cap%"
+        echo "00$cap%+"
     else
         systemctl hibernate
     fi
