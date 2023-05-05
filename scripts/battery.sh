@@ -39,7 +39,7 @@ if (( $cap == 100 )); then
     elif [[ $stat == "Full" ]]; then
         echo "$cap%+" 
     else
-        echo "$cap%+"
+        echo "$cap% "
     fi
 elif (( $cap > 75 && $cap < 100 )); then
     if [[ $stat == "Charging" ]]; then
